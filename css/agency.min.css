@@ -20,7 +20,6 @@
  	}
 
  	#video-carousel-example2{
- 		height: 100;
  	}
 
  	a:hover{
@@ -71,12 +70,12 @@
  			}
 
  		::-moz-selection{
- 			background:#e6a503;
+ 			background:#e6a503!important;
  			text-shadow:none
  			}
 
  		::selection{
- 			background:#e6a503;
+ 			background:#e6a503!important;
  			text-shadow:none
  			}
 

@@ -22,7 +22,9 @@
         <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">        
         <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
         <img id="sechelt2-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-        
+
+        <img id="cirB-thumb" crossorigin="anonymous" src="https://azmeruq.github.io/img/circuloB.png">
+
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         
         
@@ -31,7 +33,7 @@
         <script id="link" type="text/html">
           <a-entity class="link"
             geometry="primitive: plane; height: 1; width: 1"
-            material="shader: flat; src: ${thumb}"
+            material="shader: flat; transparent:true; src: ${thumb}"
             event-set__mouseenter="scale: 1.2 1.2 1"
             event-set__mouseleave="scale: 1 1 1"
 
@@ -50,10 +52,12 @@
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 3" position="0 0 0" rotation="-90 180 0">>
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb" data-position="0 0 0" ></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb" data-position="3 0 0"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb" data-position="6 0 0"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt2" data-thumb="#sechelt2-thumb"
+        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cirB-thumb" data-position="0 0 0" ></a-entity>
+
+        <a-entity template="src: #link" data-src="#city" data-thumb="#cirB-thumb" data-position="3 0 0"></a-entity>
+
+        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#cirB-thumb" data-position="6 0 0"></a-entity>
+        <a-entity template="src: #link" data-src="#sechelt2" data-thumb="#cirB-thumb"
         data-position="9 0 0"></a-entity>
       </a-entity>
 

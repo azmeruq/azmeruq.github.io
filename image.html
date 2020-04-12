@@ -1,13 +1,47 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <title>Changing the Sky</title>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('button-interaction-handler', {
+        init: function () {
+          var skyEl = this.el.sceneEl.querySelector('#background');
+          
+          this.el.addEventListener('mouseenter', function () {
+            skyEl.setAttribute('src', '#chineseTemple');  
+          });
+          
+          this.el.addEventListener('mouseleave', function () {
+            skyEl.setAttribute('src', '#backgroundInsideHouse');  
+          });
+        }  
+      });
+    </script> 
   </head>
   <body>
     <a-scene>
-  <a-assets>
-    <img id="sky" crossorigin="anonymous" src="img/murcielagos.jpg">
-  </a-assets>
-  <a-sky src="#sky"></a-sky>
-</a-scene>
+      <a-assets>
+        <img id="backgroundInsideHouse" crossorigin="anonymous" src="https://azmeruq.github.io/01.png">
+        <img id="chineseTemple" crossorigin="anonymous" src="https://cdn.glitch.com/e6225ccd-c32e-4cf8-b039-e78814a8cb78%2Fbg-1.jpg">
+      </a-assets>
+
+      <a-sky id="background" src="#backgroundInsideHouse"></a-sky>
+
+      <!--
+        Since this is inside the plane, the text position is relative to the plane's position
+        If we use the property align wisely, we don't need to experiment with position.
+      -->
+      <a-plane button-interaction-handler position="3 3 -9" height="2" width="5" color="#E21D2D" position="0 0 -4">     
+        <a-text value="Trip to China" scale="2 2 2" align="center" ></a-text>    
+      </a-plane>
+
+     <!-- Camera and Cursor. -->    
+      <a-camera> 
+        <a-cursor color="#11D8C4" fuse="true" timeout="10"></a-cursor> 
+      </a-camera> 
+      
+      <!-- Controllers. -->
+      <a-entity laser-controls="hand: right"></a-entity>
+    </a-scene>  
   </body>
 </html>

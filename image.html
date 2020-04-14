@@ -28,9 +28,10 @@
 
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
-        <video id="video" autobuffer autoplay="true" muted webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/bat04.mp4"></video>
+        <video id="video" autobuffer autoplay="true" muted webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/img/blueCat.mp4"></video>
 
         <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
+        <img id="pauseImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPause.png">
         
         
 
@@ -51,12 +52,25 @@
 
         <script id="buttonPlay" type="text/html">
           <a-entity class="link"
-            geometry="primitive: plane; height: 1; width: 1"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
             material="shader: flat; transparent:true; src: ${image}"
             event-set__mouseenter="scale: 1.2 1.2 1"
             event-set__mouseleave="scale: 1 1 1"
+            position="-0.2 -0.3 0.5"
+            onclick="document.getElementById('video').play()"
 
-            event-set__play="_event: click; _target: #links; position: ${position}"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+
+        <script id="buttonPause" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; transparent:true; src: ${image}"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="0.2 -0.3 0.5"
+            onclick="document.getElementById('video').pause()"
+
             sound="on: click; src: #click-sound"></a-entity>
         </script>
 
@@ -79,7 +93,7 @@
         data-position="9 0 0"></a-entity>
       </a-entity>
 
-      <a-entity id="push" layout="type: line; margin: 3" position="0 0.4 -3.5" rotation="0 0 0">
+      <a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
         <a-video 
         webkit-playsinline 
         playsinline 
@@ -88,7 +102,8 @@
         src="#video" 
         width="3" 
         height="1.5"></a-video>
-        <a-entity template="src: #buttonPlay" data-thumb="playImg"></a-entity>
+        <a-entity template="src: #buttonPlay" data-image="#playImg" ></a-entity>
+        <a-entity template="src: #buttonPause" data-image="#pauseImg" ></a-entity>
       </a-entity>
 
 
@@ -108,21 +123,12 @@
     </a-scene>
 
 
-    <script>
-    function increaseVolume(){
-      if(document.getElementById('video').volume &lt;= 0.9){
-        document.getElementById('video').volume += 0.1;
-      }
-      console.log(document.getElementById('video').volume)
-      //alert(document.getElementById('video').volume)
-    }
-    </script>
-    <style>.buttons{position:fixed;top:0;left:0;z-index:99999;}</style>
+    <!--style>.buttons{position:fixed;top:0;left:0;z-index:99999;}</style>
     <div class="buttons">
       <button onclick="document.getElementById('video').play()">Play</button>
       <button onclick="document.getElementById('video').pause()">Pause</button>
-      <!--iframe width="560" height="315" src="https://www.youtube.com/embed/caQAVwHPdf4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
-    </div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/caQAVwHPdf4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div-->
 
 
   </body>

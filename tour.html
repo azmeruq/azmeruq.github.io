@@ -36,6 +36,7 @@
         <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
 
         <img id="hotSpotImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/XR-Hotspot.png">
+        <img id="windowImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/hs2.png">
         <!--script>
           tbHotspot2.addEventListener('mousedown', function () {
           tbHsVideoBtn.setAttribute("class", "clickable");
@@ -121,9 +122,49 @@
 
       <a-entity id="HotSpot01" template="src: #spot" ></a-entity>
 
-      <a-entity id="tbHs2" class="sceneHotspot" position="1.03367 1.43952 6.13326" look-at="#lookCube" geometry="" material="src: assets/hotspots/tb/hs2.png; shader: flat; transparent: true" scale="8 8 0.001" rotation="1.4010629573255968 -24.486173518748288 0" visible="">
-     <a-entity id="tbHsClose2" geometry="" material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false" scale="0.27 0.2 -429.8" position="0.21 0.23 50" class="clickable"></a-entity>
-     <a-entity id="tbHsVideoBtn" geometry="" material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false; visible: false" scale="0.41 0.2 -429.8" position="0.09 -0.39 50" class="clickable"></a-entity>
+      <script id="window" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: box; height: 1; width: 1"
+            scale="8 8 0.001"
+            material="shader: flat; transparent:true; src: #windowImg"
+            position="7 1 0"
+            rotation="0 -90 0"></a-entity>
+
+      </script>
+      <script id="close" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.4"
+            material="shader: flat; transparent:true; src: #hotSpotImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="0.2 0.2 50"
+            rotation="0 0 0"></a-entity>
+
+      </script>
+
+      <a-entity id="Window01" template="src: #window" >
+        <a-entity id="close01" template="src: #close" ></a-entity>
+
+      </a-entity>
+
+      <a-entity id="tbHs2" 
+      class="sceneHotspot" 
+      position="1.03367 1.43952 6.13326" 
+      material="src: https://azmeruq.github.io/img/hs2.png; shader: flat; transparent: true" 
+      scale="8 8 0.001" 
+      rotation="1.4010629573255968 -24.486173518748288 0" 
+      visible="">
+       <a-entity id="tbHsClose2" 
+       geometry="" 
+       material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false" 
+       scale="0.27 0.2 -429.8" 
+       position="0.21 0.23 50" 
+       class="clickable"></a-entity>
+       <a-entity id="tbHsVideoBtn" 
+       material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false; visible: false" 
+       scale="0.41 0.2 -429.8" 
+       position="0.09 -0.39 50" 
+       class="clickable"></a-entity>
       </a-entity>
       <!-- ------------------------------------------- -->
 

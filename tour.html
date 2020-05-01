@@ -10,9 +10,11 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene >
       <a-assets>
         <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/01.png">
         <img id="city" crossorigin="anonymous" src="https://azmeruq.github.io/02.png">
@@ -33,13 +35,13 @@
         <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
         <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
 
-        <img id="hotSpotIm" crossorigin="anonymous" src="/img/XR-Hotspot.png">
-        <script>
+        <img id="hotSpotImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/XR-Hotspot.png">
+        <!--script>
           tbHotspot2.addEventListener('mousedown', function () {
           tbHsVideoBtn.setAttribute("class", "clickable");
             });
           
-        </script>
+        </script-->
 
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
@@ -105,8 +107,24 @@
 
       <!-- ------------------------------------------- -->
 
-      <a-entity id="HotSpot01" geometry="primitive: circle" material="" position="4.3 1 0"></a-entity>
+      <script id="spot" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.4"
+            material="shader: flat; transparent:true; src: #hotSpotImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="4.3 1 0"
+            rotation="0 -90 0"
+            sound="on: click; src: #click-sound"></a-entity>
 
+      </script>
+
+      <a-entity id="HotSpot01" template="src: #spot" ></a-entity>
+
+      <a-entity id="tbHs2" class="sceneHotspot" position="1.03367 1.43952 6.13326" look-at="#lookCube" geometry="" material="src: assets/hotspots/tb/hs2.png; shader: flat; transparent: true" scale="8 8 0.001" rotation="1.4010629573255968 -24.486173518748288 0" visible="">
+     <a-entity id="tbHsClose2" geometry="" material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false" scale="0.27 0.2 -429.8" position="0.21 0.23 50" class="clickable"></a-entity>
+     <a-entity id="tbHsVideoBtn" geometry="" material="alphaTest: 0.99; opacity: 0; blending: none; depthTest: false; depthWrite: false; visible: false" scale="0.41 0.2 -429.8" position="0.09 -0.39 50" class="clickable"></a-entity>
+      </a-entity>
       <!-- ------------------------------------------- -->
 
       <a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
@@ -126,7 +144,7 @@
       
 
       <!-- Camera + cursor. -->
-      <a-camera>
+      <a-camera id="cam" wasd-controls="enabled: false">
         <a-cursor
           color="cyan"
           id="cursor"

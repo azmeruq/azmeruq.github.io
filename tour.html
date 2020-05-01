@@ -32,8 +32,14 @@
 
         <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
         <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
-        
-        
+
+        <img id="hotSpotIm" crossorigin="anonymous" src="/img/XR-Hotspot.png">
+        <script>
+          tbHotspot2.addEventListener('mousedown', function () {
+          tbHsVideoBtn.setAttribute("class", "clickable");
+            });
+          
+        </script>
 
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
@@ -96,6 +102,12 @@
         <a-entity template="src: #link" data-src="#sechelt2" data-thumb="#cirB-thumb"
         data-position="9 0.8 0"></a-entity>
       </a-entity>
+
+      <!-- ------------------------------------------- -->
+
+      <a-entity id="HotSpot01" geometry="primitive: circle" material="" position="4.3 1 0"></a-entity>
+
+      <!-- ------------------------------------------- -->
 
       <a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
         <a-video 

@@ -234,8 +234,12 @@
       mylink="href: https://www.youtube.com/?hl=es-419&gl=MX;"></a-entity>
 
 
-      <a-link position="4.5 0 7.3" rotation="0 -160 0" href="SalaStream.html" title="Stream" image="#city"></a-link>
+      <a-link position="4.5 0 7.3" rotation="0 -160 0" href="https://azmeruq.github.io/SalaStream" title="Stream" image="https://azmeruq.github.io/SalaStream"></a-link>
 
+      
+
+      <a-entity geometry="sphere" link="https://azmeruq.github.io/SalaStream; title: Stream; image: #city"></a-entity>
+      
       <!--a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
         <a-video 
         webkit-playsinline 
@@ -253,6 +257,7 @@
       
 
       <!-- Camera + cursor. -->
+      <a-entity id="rig "rotation="0 180 0">
       <a-camera wasd-controls="enabled: false">
         <a-cursor
           color="cyan"
@@ -263,6 +268,8 @@
           event-set__mouseleave="_event: mouseleave; color: cyan"
           raycaster="objects: .link"></a-cursor>
       </a-camera>
+      </a-entity>
+      
     </a-scene>
 
  

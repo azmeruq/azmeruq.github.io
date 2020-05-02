@@ -39,6 +39,7 @@
         <img id="windowImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/window.png">
         <img id="closeImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/close.png">
         <audio id="khSound" crossorigin="anonymous" src="https://azmeruq.github.io/img/Kingdom Hearts - Dearly Beloved - Yoko Shimomura.mp3"></audio>
+        <img id="soundImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/sound.png">
 
         <!--script>
           tbHotspot2.addEventListener('mousedown', function () {
@@ -159,6 +160,18 @@
             ></a-entity>
       </script >
 
+      <script id="sound" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.2"
+            material="shader: flat; transparent:true; src: #soundImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="0 0 0.05"
+            onclick="document.getElementById('khSound').play()"
+
+            sound="on: click; src: #click-sound"></a-entity>
+      </script>
+
       <a-entity id="CardImage" position="4.3 1 0" rotation="0 -90 0">
         <a-entity id="HotSpot01" template="src: #spot" 
         data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01"></a-entity>
@@ -189,17 +202,17 @@
         visible="false" ></a-entity>
       </a-entity>
 
-      <a-entity id="CardAudio" position="4.3 2.2 -3.5" rotation="0 -90 0">
+      <a-entity id="CardAudio" position="4.3 1.2 3" rotation="0 -90 0">
         <a-entity id="HotSpot03" template="src: #spot" 
-        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Text03"></a-entity>
+        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03"></a-entity>
 
         <a-entity id="Window03" template="src: #window"
           visible="false"></a-entity>
 
-        <a-entity id="Audio03" sound="src: url(river.mp3); autoplay: true" visible="false"></a-entity>
+        <a-entity id="Sound03" template="src: #sound" position="0 3 0" visible="false"></a-entity>
 
         <a-entity id="Close03" template="src: #close" position="1.7 1.6 0.1" 
-        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Text03" 
+        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03" 
         visible="false" ></a-entity>
       </a-entity>
 

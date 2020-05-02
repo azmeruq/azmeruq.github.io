@@ -38,6 +38,8 @@
         <img id="hotSpotImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/XR-Hotspot.png">
         <img id="windowImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/window.png">
         <img id="closeImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/close.png">
+        <audio id="khSound" crossorigin="anonymous" src="https://azmeruq.github.io/img/Kingdom Hearts - Dearly Beloved - Yoko Shimomura.mp3"></audio>
+
         <!--script>
           tbHotspot2.addEventListener('mousedown', function () {
           tbHsVideoBtn.setAttribute("class", "clickable");
@@ -194,7 +196,7 @@
         <a-entity id="Window03" template="src: #window"
           visible="false"></a-entity>
 
-        <a-entity id="Audio03" visible="false"></a-entity>
+        <a-entity id="Audio03" sound="src: url(river.mp3); autoplay: true" visible="false"></a-entity>
 
         <a-entity id="Close03" template="src: #close" position="1.7 1.6 0.1" 
         data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Text03" 

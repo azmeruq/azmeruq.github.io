@@ -11,13 +11,17 @@
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
   </head>
   <body>
+
+
+
     <a-scene>
+
       <a-assets>
         <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/img/insta00.png">
-        <img id="city" crossorigin="anonymous" src="https://github.com/azmeruq/azmeruq.github.io/blob/master/img/insta01.png">
+        <img id="city" crossorigin="anonymous" src="https://azmeruq.github.io/img/insta02.png">
 
-        
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+
+        <img id="cubes-thumb" crossorigin="anonymous" src="https://azmeruq.github.io/img/about/4.jpg">
         <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">        
         <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
         <img id="sechelt2-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
@@ -26,6 +30,17 @@
 
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         
+        <video id="video" autobuffer autoplay="true" webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/img/blueCats.mp4"></video>
+
+        <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
+        <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
+
+        <img id="hotSpotImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/XR-Hotspot.png">
+        <img id="windowImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/window.png">
+        <img id="closeImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/close.png">
+        <audio id="khSound" crossorigin="anonymous" src="https://azmeruq.github.io/img/Kingdom Hearts - Dearly Beloved - Yoko Shimomura.mp3"></audio>
+        <img id="soundImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/sound.png">
+
         
 
         <!-- Image link template to be reused. -->
@@ -42,6 +57,39 @@
             proxy-event="event: click; to: #image-360; as: fade"
             sound="on: click; src: #click-sound"></a-entity>
         </script>
+
+        <script id="enlace" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.4"
+            material="shader: flat; transparent:true; src: #hotSpotImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+
+        <script id="buttonPlay" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; transparent:true; src: ${image}"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="-0.2 -0.3 0.5"
+            onclick="document.getElementById('video').play()"
+
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+
+        <script id="buttonPause" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; transparent:true; src: ${image}"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="0.2 -0.3 0.5"
+            onclick="document.getElementById('video').pause()"
+
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
       </a-assets>
 
 
@@ -52,19 +100,166 @@
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
       <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 3" position="0 0 0" rotation="-90 -62.5 0">>
+      <a-entity id="links" layout="type: line; margin: 3" position="0 0 0" rotation="-90 -62.5 0">
         <a-entity template="src: #link" data-src="#cubes" data-thumb="#cirB-thumb" data-position="0 0 0" ></a-entity>
 
-        <a-entity template="src: #link" data-src="#city" data-thumb="#cirB-thumb" data-position="3 0 0"></a-entity>
+        <a-entity template="src: #link" data-src="#city" data-thumb="#cirB-thumb" data-position="-1.38 0 -2.66"></a-entity>
 
       </a-entity>
 
+      <script id="spot" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.4"
+            material="shader: flat; transparent:true; src: #hotSpotImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            event-set__spotVisible="_event: click; _target: ${spot}; visible: false"
+            event-set__mediaVisible="_event: click; _target: ${media}; visible: true"
+            event-set__windowVisible="_event: click; _target: ${window}; visible: true"
+            event-set__closeVisible="_event: click; _target: ${close}; visible: true"
+            
+            sound="on: click; src: #click-sound"></a-entity>
+
+      </script>
+
+      
+
+      <script id="window" type="text/html">
+          <a-entity 
+            geometry="primitive: box; height: 1; width: 1"
+            scale="3.5 3.5 0.001"
+            material="shader: flat; transparent:true; src: #windowImg"
+           ></a-entity>
+      </script>
+
+      <script id="image" type="text/html">
+          <a-entity 
+            geometry="primitive: box; height: 1; width: 1"
+            scale="3 3 0.001"
+            material="shader: flat; transparent:true; src: ${ima}"
+            position= "0 0 0.05"
+           ></a-entity>
+      </script>
+
+      <script id="close" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.3"
+            material="shader: flat; transparent:true; src: #closeImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            event-set__spotVisible="_event: click; _target: ${spot}; visible: true"
+            event-set__mediaVisible="_event: click; _target: ${media}; visible: false"
+             event-set__windowVisible="_event: click; _target: ${window}; visible: false"
+            event-set__closeVisible="_event: click; _target: ${close}; visible: false"
+            sound="on: click; src: #click-sound"
+            ></a-entity>
+      </script >
+
+      <script id="sound" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.5"
+            material="shader: flat; transparent:true; src: #soundImg"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            position="0 0 0.05"
+            onclick="document.getElementById('khSound').play()"
+
+            sound="on: click; src: #click-sound"></a-entity>
+      </script>
+
+      <a-entity id="CardImage" position="-7 0 2" rotation="0 90 0">
+        <a-entity id="HotSpot01" template="src: #spot" 
+        data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01"></a-entity>
+
+        <a-entity id="Window01" template="src: #window"
+          visible="false"></a-entity>
+
+        <a-entity id="Image01" template="src: #image"
+          visible="false" data-ima="#cubes-thumb"></a-entity>
+
+        <a-entity id="Close01" template="src: #close" position="1.7 1.6 0.1" 
+        data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01" 
+        visible="false"></a-entity>
+      </a-entity>
+
+      <a-entity id="CardText" position="3.5 0.5 7.8" rotation="0 -160 0">
+        <a-entity id="HotSpot02" template="src: #spot" 
+        data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02"></a-entity>
+
+        <a-entity id="Window02" template="src: #window"
+          visible="false"></a-entity>
+
+        <a-entity id="Text02" position="0 0 0.05" text="value: Entra al streaming; align: center; width: 15" 
+        visible="false"></a-entity>
+
+        <a-entity id="Close02" template="src: #close" position="1.7 1.6 0.1" 
+        data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02" 
+        visible="false" ></a-entity>
+      </a-entity>
+
+      <a-entity id="CardAudio" position="0 1 -6" rotation="0 0 0">
+        <a-entity id="HotSpot03" template="src: #spot" 
+        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03"></a-entity>
+
+        <a-entity id="Window03" template="src: #window"
+          visible="false"></a-entity>
+
+        <a-entity id="Sound03" template="src: #sound" position="0 1 0" visible="false"></a-entity>
+
+        <a-entity id="Close03" template="src: #close" position="1.7 1.6 0.1" 
+        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03" 
+        visible="false" ></a-entity>
+      </a-entity>
+
+      <a-entity id="CardVideo" position="7 1 0" rotation="0 -90 0">
+        <a-entity id="HotSpot04" template="src: #spot" 
+        data-spot="#HotSpot04" data-window="#Window04" data-close="#Close04" data-media="#Sound04"></a-entity>
+
+        <a-entity id="Window04" template="src: #window"
+          visible="false"></a-entity>
+
+      <a-entity id="Sound04" template="src: #sound" position="0 1 0" visible="false"></a-entity>
+
+        <a-entity id="Close04" template="src: #close" position="1.7 1.6 0.1" 
+        data-spot="#HotSpot04" data-window="#Window04" data-close="#Close04" data-media="#Sound04" 
+        visible="false" ></a-entity>
+      </a-entity>
+
+
+      <script >
+              AFRAME.registerComponent("mylink", {
+        init: function() {
+          this.el.addEventListener("click", (e)=> {
+             window.location = this.data.href;
+          })
+        }
+      })
+      </script >
+
+      <a-entity template="src: #enlace" position="-4 0 6.5" rotation="0 180 0"
+      mylink="href: https://www.youtube.com/?hl=es-419&gl=MX;"></a-entity>
+
+
+
+
+      <!--a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
+        <a-video 
+        webkit-playsinline 
+        playsinline 
+        autoplay="true" 
+        loop="true" 
+        src="#video" 
+        width="3" 
+        height="1.5"></a-video>
+        <a-entity template="src: #buttonPlay" data-image="#playImg" ></a-entity>
+        <a-entity template="src: #buttonPause" data-image="#pauseImg" ></a-entity>
+      </a-entity..>
 
       
       
 
       <!-- Camera + cursor. -->
-      <a-camera>
+      <a-camera wasd-controls="enabled: false">
         <a-cursor
           color="cyan"
           id="cursor"
@@ -75,6 +270,37 @@
           raycaster="objects: .link"></a-cursor>
       </a-camera>
     </a-scene>
+
+
+    <div id="text">
+      <h1>A-Frame Spinosaurus for VR/AR</h1>
+    
+      <p>
+        Model: <a href="https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7">Spinosaurus</a> by 
+        <a href="https://sketchfab.com/VapTor">Vaptor-Studio</a>.
+      </p>
+      <p>
+        Size: <button id="btn_full">Full</button>
+        <button id="btn_half">1/2</button>
+        <button id="btn_quarter">1/4</button>
+      </p>
+      
+      <p>
+        To try WebXR's experimental AR mode, use an <a href="https://developers.google.com/ar/discover/supported-devices">ARCore-compatible</a> 
+        Android phone with Chrome v79+ and enable <b>WebXR AR Module</b> in chrome://flags.
+      </p>
+      
+      <p>
+        Powered by <a href="https://aframe.io/blog/aframe-v1.0.0/">A-Frame v1.0.0</a>.
+      </p>
+    </div>
+
+
+
+    
+
+
+
   </body>
 </html>
 

@@ -13,7 +13,7 @@
   <body>
     <a-scene>
       <a-assets>
-        <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/01.png">
+        <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/img/insta00.png">
         <img id="city" crossorigin="anonymous" src="https://azmeruq.github.io/02.png">
         <img id="sechelt" crossorigin="anonymous" src="https://azmeruq.github.io/03.png">
         <img id="sechelt2" crossorigin="anonymous" src="https://azmeruq.github.io/04.png">
@@ -45,20 +45,22 @@
         </script>
       </a-assets>
 
+
+
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#cubes" position="0 0.4 0"
+      <a-sky id="image-360" radius="10" src="#cubes" position="0 0.4 0" geometry="radius: 11.5"
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
       <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 3" position="0 0 0" rotation="-90 180 0">>
+      <a-entity id="links" layout="type: line; margin: 3" position="0 0 0" rotation="-90 -62.5 0">>
         <a-entity template="src: #link" data-src="#cubes" data-thumb="#cirB-thumb" data-position="0 0 0" ></a-entity>
 
         <a-entity template="src: #link" data-src="#city" data-thumb="#cirB-thumb" data-position="3 0 0"></a-entity>
 
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#cirB-thumb" data-position="6 0 0"></a-entity>
+        <!--a-entity template="src: #link" data-src="#sechelt" data-thumb="#cirB-thumb" data-position="6 0 0"></a-entity>
         <a-entity template="src: #link" data-src="#sechelt2" data-thumb="#cirB-thumb"
-        data-position="9 0 0"></a-entity>
+        data-position="9 0 0"></a-entity-->
       </a-entity>
 
 

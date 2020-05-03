@@ -93,6 +93,19 @@
       <a-entity id="stream" template="src: #enlace" position="8.5 1 -1.5" rotation="0 270 0"
       mylink="href: https://www.youtube.com/watch?v=5qap5aO4i9A;"></a-entity>
 
+      
+      <script >
+              AFRAME.registerComponent("room", {
+        init: function() {
+          this.el.addEventListener("click", (e)=> {
+             window.location = this.data.href
+          })
+        }
+      })
+      </script >
+
+      <a-entity id="newRoom" template="src: #enlace" position="-2.3 0 -10" rotation="0 0 0"
+      room="href: https://azmeruq.github.io/SalaInsta;"></a-entity>
 
       <!-- Camera + cursor. -->
       <a-camera wasd-controls="enabled: false">

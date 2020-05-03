@@ -23,14 +23,11 @@
 
         <img id="cubes-thumb" crossorigin="anonymous" src="https://azmeruq.github.io/img/about/4.jpg">
         <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">        
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-        <img id="sechelt2-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+                
 
         <img id="cirB-thumb" crossorigin="anonymous" src="https://azmeruq.github.io/img/circuloB.png">
 
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        
-        <video id="video" autobuffer autoplay="true" webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/img/blueCats.mp4"></video>
 
         <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
         <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
@@ -38,7 +35,6 @@
         <img id="hotSpotImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/XR-Hotspot.png">
         <img id="windowImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/window.png">
         <img id="closeImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/close.png">
-        <audio id="khSound" crossorigin="anonymous" src="https://azmeruq.github.io/img/Kingdom Hearts - Dearly Beloved - Yoko Shimomura.mp3"></audio>
         <img id="soundImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/sound.png">
 
         
@@ -58,14 +54,6 @@
             sound="on: click; src: #click-sound"></a-entity>
         </script>
 
-        <script id="enlace" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: circle; radius: 0.4"
-            material="shader: flat; transparent:true; src: #hotSpotImg"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            sound="on: click; src: #click-sound"></a-entity>
-        </script>
 
       </a-assets>
 
@@ -75,10 +63,6 @@
       <a-sky id="image-360" radius="10" src="#city" position="0 0.4 0" geometry="radius: 11.5"
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
-
-
-
-
 
       <script >
               AFRAME.registerComponent("mylink", {

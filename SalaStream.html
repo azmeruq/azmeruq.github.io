@@ -67,29 +67,6 @@
             sound="on: click; src: #click-sound"></a-entity>
         </script>
 
-        <script id="buttonPlay" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 0.3; width: 0.3"
-            material="shader: flat; transparent:true; src: ${image}"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            position="-0.2 -0.3 0.5"
-            onclick="document.getElementById('video').play()"
-
-            sound="on: click; src: #click-sound"></a-entity>
-        </script>
-
-        <script id="buttonPause" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 0.3; width: 0.3"
-            material="shader: flat; transparent:true; src: ${image}"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            position="0.2 -0.3 0.5"
-            onclick="document.getElementById('video').pause()"
-
-            sound="on: click; src: #click-sound"></a-entity>
-        </script>
       </a-assets>
 
 
@@ -101,123 +78,6 @@
 
 
 
-      <script id="spot" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: circle; radius: 0.4"
-            material="shader: flat; transparent:true; src: #hotSpotImg"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            event-set__spotVisible="_event: click; _target: ${spot}; visible: false"
-            event-set__mediaVisible="_event: click; _target: ${media}; visible: true"
-            event-set__windowVisible="_event: click; _target: ${window}; visible: true"
-            event-set__closeVisible="_event: click; _target: ${close}; visible: true"
-            
-            sound="on: click; src: #click-sound"></a-entity>
-
-      </script>
-
-      
-
-      <script id="window" type="text/html">
-          <a-entity 
-            geometry="primitive: box; height: 1; width: 1"
-            scale="3.5 3.5 0.001"
-            material="shader: flat; transparent:true; src: #windowImg"
-           ></a-entity>
-      </script>
-
-      <script id="image" type="text/html">
-          <a-entity 
-            geometry="primitive: box; height: 1; width: 1"
-            scale="3 3 0.001"
-            material="shader: flat; transparent:true; src: ${ima}"
-            position= "0 0 0.05"
-           ></a-entity>
-      </script>
-
-      <script id="close" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: circle; radius: 0.3"
-            material="shader: flat; transparent:true; src: #closeImg"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            event-set__spotVisible="_event: click; _target: ${spot}; visible: true"
-            event-set__mediaVisible="_event: click; _target: ${media}; visible: false"
-             event-set__windowVisible="_event: click; _target: ${window}; visible: false"
-            event-set__closeVisible="_event: click; _target: ${close}; visible: false"
-            sound="on: click; src: #click-sound"
-            ></a-entity>
-      </script >
-
-      <script id="sound" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: circle; radius: 0.5"
-            material="shader: flat; transparent:true; src: #soundImg"
-            event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1"
-            position="0 0 0.05"
-            onclick="document.getElementById('khSound').play()"
-
-            sound="on: click; src: #click-sound"></a-entity>
-      </script>
-
-      <a-entity id="CardImage" position="-7 0 2" rotation="0 90 0">
-        <a-entity id="HotSpot01" template="src: #spot" 
-        data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01"></a-entity>
-
-        <a-entity id="Window01" template="src: #window"
-          visible="false"></a-entity>
-
-        <a-entity id="Image01" template="src: #image"
-          visible="false" data-ima="#cubes-thumb"></a-entity>
-
-        <a-entity id="Close01" template="src: #close" position="1.7 1.6 0.1" 
-        data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01" 
-        visible="false"></a-entity>
-      </a-entity>
-
-      <a-entity id="CardText" position="0 0 7.8" rotation="0 -180 0">
-        <a-entity id="HotSpot02" template="src: #spot" 
-        data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02"></a-entity>
-
-        <a-entity id="Window02" template="src: #window"
-          visible="false"></a-entity>
-
-        <a-entity id="Text02" position="0 0 0.05" text="value: Entra al streaming; align: center; width: 15" 
-        visible="false"></a-entity>
-
-        <a-entity id="Close02" template="src: #close" position="1.7 1.6 0.1" 
-        data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02" 
-        visible="false" ></a-entity>
-      </a-entity>
-
-      <a-entity id="CardAudio" position="0 1 -6" rotation="0 0 0">
-        <a-entity id="HotSpot03" template="src: #spot" 
-        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03"></a-entity>
-
-        <a-entity id="Window03" template="src: #window"
-          visible="false"></a-entity>
-
-        <a-entity id="Sound03" template="src: #sound" position="0 1 0" visible="false"></a-entity>
-
-        <a-entity id="Close03" template="src: #close" position="1.7 1.6 0.1" 
-        data-spot="#HotSpot03" data-window="#Window03" data-close="#Close03" data-media="#Sound03" 
-        visible="false" ></a-entity>
-      </a-entity>
-
-      <a-entity id="CardVideo" position="7 1 0" rotation="0 -90 0">
-        <a-entity id="HotSpot04" template="src: #spot" 
-        data-spot="#HotSpot04" data-window="#Window04" data-close="#Close04" data-media="#Sound04"></a-entity>
-
-        <a-entity id="Window04" template="src: #window"
-          visible="false"></a-entity>
-
-      <a-entity id="Sound04" template="src: #sound" position="0 1 0" visible="false"></a-entity>
-
-        <a-entity id="Close04" template="src: #close" position="1.7 1.6 0.1" 
-        data-spot="#HotSpot04" data-window="#Window04" data-close="#Close04" data-media="#Sound04" 
-        visible="false" ></a-entity>
-      </a-entity>
 
 
       <script >
@@ -230,27 +90,9 @@
       })
       </script >
 
-      <a-entity template="src: #enlace" position="-4 0 6.5" rotation="0 180 0"
-      mylink="href: https://www.youtube.com/?hl=es-419&gl=MX;"></a-entity>
+      <a-entity id="stream" template="src: #enlace" position="8.5 1 -1.5" rotation="0 270 0"
+      mylink="href: https://www.youtube.com/watch?v=5qap5aO4i9A;"></a-entity>
 
-
-
-
-      <!--a-entity id="push"  position="0 0.4 -3.5" rotation="0 0 0">
-        <a-video 
-        webkit-playsinline 
-        playsinline 
-        autoplay="true" 
-        loop="true" 
-        src="#video" 
-        width="3" 
-        height="1.5"></a-video>
-        <a-entity template="src: #buttonPlay" data-image="#playImg" ></a-entity>
-        <a-entity template="src: #buttonPause" data-image="#pauseImg" ></a-entity>
-      </a-entity..>
-
-      
-      
 
       <!-- Camera + cursor. -->
       <a-camera wasd-controls="enabled: false">

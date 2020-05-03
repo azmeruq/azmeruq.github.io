@@ -30,7 +30,7 @@
 
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         
-        <video id="video" autobuffer autoplay="true" webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/img/blueCats.mp4"></video>
+        <video id="video" autobuffer autoplay="true" webkit-playsinline playsinline crossorigin="anonymous" loop="true"src="https://azmeruq.github.io/img/instagramhacks.mp4"></video>
 
         <img id="playImg" crossorigin="anonymous" src="https://azmeruq.github.io/img/buttonPlay.png">
         <img id="pauseImg" crossorigin="anonymous" src="https://raw.githubusercontent.com/azmeruq/azmeruq.github.io/master/img/buttonPause.png">
@@ -183,8 +183,10 @@
         <a-entity id="Window02" template="src: #window"
           visible="false"></a-entity>
 
-        <a-entity id="Text02" position="0 0 0.05" text="value: Entra al streaming; align: center; width: 15" 
-        visible="false"></a-entity>
+        <a-entity id="Text02" position="0 0 0.05" visible="false">
+          <a-entity  position="0 0 0.05" text="value: Entra al streaming; align: center; width: 15"></a-entity>
+
+        </a-entity>
 
         <a-entity id="Close02" template="src: #close" position="1.7 1.6 0.1" 
         data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02" 

@@ -13,12 +13,12 @@
   <body>
 
 
-
     <a-scene inspector="url: http://azmeruq.github.io/">
+    <!--a-scene-->
 
       <a-assets>
         <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/img/insta00.png">
-        <img id="city" crossorigin="anonymous" src="https://azmeruq.github.io/img/insta01.png">
+        <img id="city" crossorigin="anonymous" src="https://azmeruq.github.io/img/Instagram_Scena_360_08.png">
 
 
         <img id="cubes-thumb" crossorigin="anonymous" src="https://azmeruq.github.io/img/about/4.jpg">
@@ -56,7 +56,7 @@
 
         <script id="enlace" type="text/html">
           <a-entity class="link"
-            geometry="primitive: circle; radius: 0.25"
+            geometry="primitive: circle; radius: 0.4"
             material="shader: flat; transparent:true; src: #hotSpotImg"
             event-set__mouseenter="scale: 1.2 1.2 1"
             event-set__mouseleave="scale: 1 1 1"
@@ -68,7 +68,7 @@
 
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city" position="0 0.4 0" geometry="radius: 11.5"
+      <a-sky id="image-360" radius="10" src="#city" position="0 0 0" rotation="0 180 0" geometry="radius: 11.5"
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
@@ -82,7 +82,7 @@
       })
       </script >
 
-      <a-entity id="stream" template="src: #enlace" position="8.5 1 -1.5" rotation="0 270 0"
+      <a-entity id="stream" template="src: #enlace" position="2 0.5 -6" rotation="0 0 0"
       mylink="href: https://www.instagram.com/instagram/?hl=es-la;"></a-entity>
 
       
@@ -96,7 +96,7 @@
       })
       </script >
 
-      <a-entity id="newRoom" template="src: #enlace" position="-2.3 0 -10" rotation="0 0 0"
+      <a-entity id="newRoom" template="src: #enlace" position="-10 0 2.5" rotation="0 90 0"
       room="href: https://azmeruq.github.io/SalaInsta;"></a-entity>
 
       <!-- Camera + cursor. -->

@@ -14,8 +14,8 @@
 
 
 
-
     <a-scene inspector="url: http://azmeruq.github.io/">
+    <!--a-scene-->
 
       <a-assets>
         <img id="cubes" crossorigin="anonymous" src="https://azmeruq.github.io/img/Instagram_Scena_360_01.png">
@@ -96,7 +96,7 @@
 
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#cubes" position="0 0.4 0" geometry="radius: 11.5"
+      <a-sky id="image-360" radius="10" src="#cubes" position="0 0 0" rotation="0 90 0" geometry="radius: 11.5"
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
@@ -162,7 +162,7 @@
             sound="on: click; src: #click-sound"></a-entity>
       </script>
 
-      <a-entity id="CardImage" position="-7 0 2" rotation="0 90 0">
+      <a-entity id="CardImage" position="-7 1 0" rotation="0 90 0">
         <a-entity id="HotSpot01" template="src: #spot" 
         data-spot="#HotSpot01" data-window="#Window01" data-close="#Close01" data-media="#Image01"></a-entity>
 
@@ -177,7 +177,7 @@
         visible="false"></a-entity>
       </a-entity>
 
-      <a-entity id="CardText" position="-0.4 0.5 7.8" rotation="0 -180 0" scale="1.3 1.3 1">
+      <a-entity id="CardText" position="0 -0.2 7.8" rotation="0 -180 0" scale="1.3 1.3 1">
         <a-entity id="HotSpot02" template="src: #spot" 
         data-spot="#HotSpot02" data-window="#Window02" data-close="#Close02" data-media="#Text02"></a-entity>
 
@@ -226,10 +226,6 @@
         visible="false" ></a-entity>
       </a-entity>
 
-      <a-entity id="CardVideo" position="7 1 0" rotation="0 -90 0">
-        <a-entity id="HotSpot04" template="src: #spot" 
-        data-spot="#HotSpot04" data-window="#Window04" data-close="#Close04" data-media="#Sound04"></a-entity>
-
         <a-entity id="Window04" template="src: #window"
           visible="false"></a-entity>
 
@@ -251,7 +247,7 @@
       })
       </script >
 
-      <a-entity id="newWindow" template="src: #enlace" position="-4 0 6.5" rotation="0 180 0"
+      <a-entity id="newWindow" template="src: #enlace" position="-3.7 1 6.5" rotation="0 135 0"
       mylink="href: https://www.youtube.com/watch?v=5qap5aO4i9A;"></a-entity>
 
       <script >
@@ -264,11 +260,11 @@
       })
       </script >
 
-      <a-entity id="newRoom" template="src: #enlace" position="3 0 6.2" rotation="0 180 0"
+      <a-entity id="newRoom" template="src: #enlace" position="4 1 6.5" rotation="0 225 0"
       room="href: https://azmeruq.github.io/SalaStream;"></a-entity>
 
                 
-      <a-entity id="video"  position="6.5 0.9 1.3" rotation="0 -100 0">
+      <a-entity id="video"  position="8 0.9 -1.2" rotation="0 -90 0">
         <a-video 
         scale="0.9 0.9 1"
         webkit-playsinline 

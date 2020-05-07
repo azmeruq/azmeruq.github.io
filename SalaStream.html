@@ -54,6 +54,15 @@
             sound="on: click; src: #click-sound"></a-entity>
         </script>
 
+        <script id="step" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 1.4"
+            material="shader: flat; transparent:true; src: #cirB-thumb"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+
         <script id="enlace" type="text/html">
           <a-entity class="link"
             geometry="primitive: circle; radius: 0.4"
@@ -96,7 +105,7 @@
       })
       </script >
 
-      <a-entity id="newRoom" template="src: #enlace" position="-10 0 2.5" rotation="0 90 0"
+      <a-entity id="newRoom" template="src: #step" position="-8.5 -4.3 2.5" rotation="-90 0 0"
       room="href: https://azmeruq.github.io/SalaInsta;"></a-entity>
 
       <!-- Camera + cursor. -->

@@ -14,8 +14,8 @@
 
 
 
-    <a-scene inspector="url: http://azmeruq.github.io/">
-    <!--a-scene-->
+    <!--a-scene inspector="url: http://azmeruq.github.io/"-->
+    <a-scene>
 
       <a-assets>
         <img id="cubes" crossorigin="anonymous" 
@@ -208,22 +208,22 @@
         <a-entity id="Text02" position="0 0.44 0.05" visible="false">         
 
           <a-entity  position="0 1.1 0.05" 
-          text="value: ¿Como ocultar publicaciones antiguas de tu feed sin eliminarlas?;
-           align: center; width: 4; font: https://azmeruq.github.io/img/Roboto-Bold-msdf.json; font-image: https://azmeruq.github.io/img/Roboto-Bold.png; negate: false " ></a-entity>
+          text="value: ¿Como funciona una expo virtual?; width: 4" ></a-entity>
 
-          <a-entity  position="0 0.22 0.05" 
+          <!--a-entity  position="0 0.22 0.05" 
           text="value: Si ha estado revisando tu estética de Instagram , podría haber algunas publicaciones que no encajan con tu nuevo tema. 
           Afortunadamente, no tienes que eliminarlos de tu página, solo los escondes en tu archivo.;
-           align: left; width: 3.5; font: https://azmeruq.github.io/img/Roboto-Italic-msdf.json; font-image: https://azmeruq.github.io/img/Roboto-Italic.png; negate: false " ></a-entity>
+           align: left; width: 3.5; font: https://azmeruq.github.io/img/Roboto-Italic-msdf.json; font-image: https://azmeruq.github.io/img/Roboto-Italic.png; negate: false " ></a-entity-->
 
-          <a-entity  position="0 -1.68 0.05" 
-          text="value: Como hacerlo:
+          <a-entity  position="0 -0.43 0.05" 
+          text="value: 
+Una expo virtual es un sitio web construido especificamente para este tipo de eventos por lo que no sustituye al sitio corporativo.
 
-*Toca los tres puntos en la parte superior de la publicación que deseas eliminar de tu feed
-*Selecciona «Archivar» y se eliminará de tu feed
-*Si deseas revisar todas tus publicaciones archivadas, toca el ícono Archivar en la esquina superior derecha de tu perfil de Instagram.
-*Si deseas restaurar las publicaciones en tu feed, todo lo que tienes que hacer es presionar «Mostrar en el perfil» en las publicaciones que desea mostrar de nuevo, y se mostrará en su ubicación original.
-          Afortunadamente, no tienes que eliminarlos de tu página, solo los escondes en tu archivo.;
+Va dirigido a una actividad de promocion en un tiempo definido.
+
+El sitio aloja stands virtuales con interaccion multimedia como videos, texto, audio, ligas a transmisiones en linea y videojuegos creados para cada tema del producto o marca.
+
+Tambien se proporciona una pagina de registro para captar los datos de quienes asistan ya sea antes del evento para permitirles el acceso o de manera opcional.;
            align: left; width: 3.5" ></a-entity>
 
         </a-entity>
@@ -270,6 +270,9 @@
 
       <a-entity id="newWindow" template="src: #enlace" position="-3.7 1 6.5" rotation="0 135 0"
       mylink="href: https://azmeruq.github.io/Projects/WebGL/Shooter.html;"></a-entity>
+
+      <a-entity id="newWindow" template="src: #enlace" position="3.1 1 5.5" rotation="0 180 0"
+      mylink="href: https://youtu.be/9pWJNJliQqg;"></a-entity>
 
       <script >
               AFRAME.registerComponent("room", {

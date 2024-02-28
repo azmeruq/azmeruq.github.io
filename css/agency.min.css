@@ -104,14 +104,14 @@
  			}
 
  		.btn-primary{
- 			background-color:#e6a503;
- 			border-color:#e6a503;
+ 			background-color:white!important;
+ 			border-color:white!important;
  			color: black!important;
  			}
 
  		.btn-primary:active, .btn-primary:focus, .btn-primary:hover{
- 			background-color:#fec810!important;
- 			border-color:#fec810!important;
+ 			background-color:antiquewhite!important;
+ 			border-color:antiquewhite!important;
  			color:#fff;
  		}
 
@@ -705,4 +705,6 @@
 
  	ul.social-buttons li a:active,ul.social-buttons li a:focus,ul.social-buttons li a:hover{
  		background-color:#dcbb8e
- }
+ 	}
+
+ 	

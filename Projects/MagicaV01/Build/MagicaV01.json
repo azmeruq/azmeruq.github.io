@@ -1,0 +1,17 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Ssb",
+"productVersion": "0.1",
+"dataUrl": "MagicaV01.data.unityweb",
+"wasmCodeUrl": "MagicaV01.wasm.code.unityweb",
+"wasmFrameworkUrl": "MagicaV01.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "MagicaV01.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.9f1"
+}
